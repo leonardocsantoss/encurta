@@ -9,7 +9,6 @@ To activate your custom menu add the following to your settings.py::
 
 from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext_lazy as _
-from report.models import ReportType
 from django.utils.text import capfirst
 from admin_tools.menu import items, Menu
 from admin_tools.menu.items import MenuItem
@@ -46,23 +45,3 @@ class CustomMenu(Menu):
                 models=('django.contrib.*', 'report.models.*',)
             ),
         ]
-        
-        
-    def init_with_context(self, context):
-        
-    
-        request = context['request']
-        
-        list_children = []
-        if request.user.is_superuser:
-            reports = ReportType.objects.all()
-        else:
-            reports = ReportType.objects.filter(Q(permissao__contains=request.user.groups.all()) | Q(permissao__isnull=True))
-        for report in reports:
-            list_children.append(items.MenuItem(report.titulo, report.get_absolute_url()))
-        if list_children:
-            self.children += [items.MenuItem(_(u'Relatórios'), children=list_children )]
-        
-        return super(CustomMenu, self).init_with_context(context)
-        
-        
