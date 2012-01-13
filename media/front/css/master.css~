@@ -1,0 +1,117 @@
+/* RESET ================================================================================= */
+/* http://meyerweb.com/eric/tools/css/reset/ v2.0 | 20110126 License:none (public domain)*/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
+	margin:0;
+	padding:0;
+	border:0;
+	font-size:100%;
+	font:inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+	display:block;
+}
+body {
+	line-height:1;
+}
+ol,ul {
+	list-style:none;
+}
+blockquote,q {
+	quotes:none;
+}
+blockquote:before,blockquote:after,q:before,q:after {
+	content:'';
+	content:none;
+}
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+p {
+	margin:0 0 10px 0;
+}
+strong {
+	font-weight: 700;
+}
+/* BODY ================================================================================= */
+body {
+	font-family:Helvetica, Arial,sans-serif;
+	font-size:14px;
+	line-height:18px;
+	background: #fff;
+	color:#898989;
+	}
+html, body {
+   height:100%;
+   margin:0;
+   padding:0;
+}
+#container_main {
+   position:relative;
+min-height:100%;
+}
+#wrapper {
+padding-bottom:70px;
+width:800px;
+margin:auto;
+text-align:center;
+}
+/* FORM STYLES ================================================================================= */
+
+#form_bg {
+	background:url(../img/bg_form.png) no-repeat top left;
+	width:555px;
+	height:43px;
+	position:relative;
+	margin:auto;
+    margin-top: 20px;
+}
+#form_bg input {
+	position:absolute;
+	top: 3px;
+	left:3px;
+	border:none;
+	background:none;
+	padding:10px;
+	width:440px;
+	font-size:14px;
+	font-weight:bold;
+	color:#c4c4c4;
+	display:block;
+}
+.send_bt {
+	background:url(../img/button.png) no-repeat top left;
+	width:83px;
+	height:37px;
+	text-indent:-9999px;
+	display:block;
+	cursor:pointer;
+	position:absolute; 
+	top: 4px;
+	left:468px;
+	border:none;
+}
+
+.success {
+	font-weight:bold;
+	color:#acd373;
+}
+
+/* error message */
+.error {
+	background-color: #FC0;
+	font-size:11px;
+	padding:2px 5px;
+	color:#000;
+	width:110px;
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;
+	border-radius:3px;
+	margin:0 0 10px 0;
+	position:absolute;
+	top: 50px;
+	left:0px;
+	
+}

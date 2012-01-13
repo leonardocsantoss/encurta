@@ -1,0 +1,10 @@
+{% extends "admin_tools/dashboard/module.html" %}
+{% block module_content %}
+<ul class="{{ module.layout }}">
+    {% spaceless %}
+    <li>
+        {{ module.children|safe }}
+    </li>
+    {% endspaceless %}
+</ul>
+{% endblock %}

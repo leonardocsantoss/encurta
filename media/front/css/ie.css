@@ -1,0 +1,12 @@
+.countdown_section {
+	display: block;
+	float: left;
+	padding:0;
+	margin:0;
+	padding-top:62px;
+	text-align: center;
+	background:url(../img/circle.png) no-repeat center top;
+	height:137px;
+	margin-bottom:30px;
+	
+}

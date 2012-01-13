@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>encurta</title>
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <link href="{{ MEDIA_URL }}front/css/master.css" rel="stylesheet" type="text/css" />
+        <link href="{{ MEDIA_URL }}front/css/font/font.css" rel="stylesheet" type="text/css" />
+        <!--[if IE]>
+                <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}front/css/ie.css" />
+        <![endif]-->
+        <!-- JQUERY -->
+        <script type="text/javascript" src="{{ MEDIA_URL }}admin/js/jquery.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#send').click(function() {
+                    var dados = $('#myform').serialize();
+                    $.ajax({
+                        type: "POST",
+                        url: "{% url short %}",
+                        data: dados,
+                        success: function(data){
+                            $('#url').removeClass('error');
+                            $('#url').val(location.host+data);
+                        },
+                        error: function(jqXHR, textStatus, errorThrown){
+                            $('#url').addClass('error');
+                            $('#url').val('');
+                            $('#url').attr('placeholder', 'Informe uma url válida');
+                        }
+                    });
+                });
+            });
+        </script>
+
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+
+    <body>
+
+        <div id="container_main">
+            <div id="wrapper">
+                <div id="form_bg">
+                    <form method="post" id="myform" />
+                        <input name="url" type="text" id="url" class="required email" maxlength="255" placeholder="Informe sua url..." />
+                        <button type="button" class="send_bt" id="send" >Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
