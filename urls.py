@@ -17,10 +17,7 @@ urlpatterns = patterns('',
     url(r'^admin_tools/', include('admin_tools.urls')),
     # Uncomment the next line to enable the admin:
     (r'^admin/', include(admin.site.urls)),
-    #URLs of the report
-    (r'^report/', include('report.urls')),
-    #URLs of the utils
-    (r'^utils/', include('utils.urls')),
+    #Urls short
     (r'^', include('short.urls')),
 )
 
